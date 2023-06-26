@@ -8,6 +8,7 @@ export const TasksPage = () => {
   });
   return (
     <section>
+      <span className="flex justify-start bg-slate-600">MASTER</span>
       <div className="mx-auto w-9/12 px-4 py-16 sm:px-6 lg:px-8">
         <div className="rounded-lg p-8 shadow-2xl shadow-indigo-100 lg:col-span-3 lg:p-12">
           <form onSubmit={onSubmit} className="space-y-4 text-gray-800">
