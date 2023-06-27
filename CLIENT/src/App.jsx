@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { ProtectedRoutes } from "./ProtectedRoutes";
 import {
   Error404,
   Home,
@@ -6,10 +7,11 @@ import {
   ProfilePage,
   RegisterPage,
   TaskFormPage,
+  TaskPage
 
 } from "./view";
-import { ProtectedRoutes } from "./ProtectedRoutes";
-import { TasksPage } from "./view/TasksPage/TaskPage";
+
+
 function App() {
   return (
     <Routes>
@@ -17,7 +19,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route element={<ProtectedRoutes />}>
-        <Route path="/tasks" element={<TasksPage />} />
+        <Route path="/tasks" element={<TaskPage />} />
         <Route path="/add-task" element={<TaskFormPage />} />
         <Route path="/tasks/:id" element={<TaskFormPage />} />
         <Route path="/profile" element={<ProfilePage />} />

@@ -3,7 +3,7 @@ import { Home } from "./Home/Home";
 import { LoginPage } from "./LoginPage/LoginPage";
 import { ProfilePage } from "./ProfilePage/ProfilePage";
 import { TaskFormPage } from "./TaskFormPage/TaskFormPage";
-import { TasksPage } from "./TasksPage/TaskPage";
+import { TaskPage } from "./TasksPage/TaskPage";
 import { RegisterPage } from "./registerPage/RegisterPage";
 export {
   Error404,
@@ -12,5 +12,5 @@ export {
   TaskFormPage,
   Home,
   ProfilePage,
-  TasksPage
+  TaskPage,
 };
