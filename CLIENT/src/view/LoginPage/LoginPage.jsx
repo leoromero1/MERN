@@ -25,7 +25,7 @@ export const LoginPage = () => {
               </p>
             </div>
 
-            <div className="order-first hidden w-full h-full lg:block">
+            <div className="order-first hidden w-full lg:block">
               <img
                 className="object-cover h-full bg-cover rounded-l-lg"
                 src="https://wwwhatsnew.com/wp-content/uploads/2021/11/tareas-pendientes.jpg"
