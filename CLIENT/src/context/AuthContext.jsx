@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect} from "react";
+import { createContext, useState, useEffect } from "react";
 import { loginRequest, registerRequest, verifyToken } from "../api/auth";
 import Cookie from "js-cookie";
 export const AuthContext = createContext();
@@ -16,8 +16,8 @@ export const AuthProvider = ({ children }) => {
       setUser(res);
     } catch (error) {
       const errorArray = Array.isArray(error.response.data.error)
-      ? error.response.data.error
-      : [error.response.data.error];
+        ? error.response.data.error
+        : [error.response.data.error];
       setErrors(errorArray);
       setIsAuthenticated(false);
     }
@@ -30,11 +30,17 @@ export const AuthProvider = ({ children }) => {
       setUser(res);
     } catch (error) {
       const errorArray = Array.isArray(error.response.data.error)
-      ? error.response.data.error
-      : [error.response.data.error];
+        ? error.response.data.error
+        : [error.response.data.error];
       setErrors(errorArray);
       setIsAuthenticated(false);
     }
+  };
+
+  const logout = () => {
+    Cookie.remove("token");
+    setIsAuthenticated(false);
+    setUser(null);
   };
 
   useEffect(() => {
@@ -52,7 +58,7 @@ export const AuthProvider = ({ children }) => {
 
       if (!cookie.token) {
         setIsAuthenticated(false);
-        setLoading(false)
+        setLoading(false);
         return setUser(null);
       }
 
@@ -78,7 +84,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ signUp, signIn, errors, isAuthenticated, user, loading }}
+      value={{ signUp, signIn, logout, user, isAuthenticated, loading, errors }}
     >
       {children}
     </AuthContext.Provider>
