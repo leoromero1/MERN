@@ -1,12 +1,19 @@
 import { useForm } from "react-hook-form";
 import { useTasks } from "../../Hooks/useTasks";
+import { useNavigate } from "react-router-dom";
 
 export const TaskFormPage = () => {
-  const { register, handleSubmit, formState:{errors} } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const { createTask } = useTasks();
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((task) => {
     createTask(task);
+    navigate('/tasks')
   });
   return (
     <section>
@@ -19,21 +26,21 @@ export const TaskFormPage = () => {
               className="w-full rounded-lg border-gray-200 p-3 text-sm"
               placeholder="Title"
               type="text"
-              {...register("title", {required: true})}
+              {...register("title", { required: true })}
               autoFocus
             />
             {errors.title && (
-            <p className="text-red-700">username is required</p>
-          )}
+              <p className="text-red-700">username is required</p>
+            )}
             <textarea
               className="w-full rounded-lg border-gray-200 p-3 text-sm tex"
               placeholder="Description"
               rows="3"
-              {...register("description", {required: true})}
+              {...register("description", { required: true })}
             ></textarea>
             {errors.description && (
-            <p className="text-red-700">username is required</p>
-          )}
+              <p className="text-red-700">Description is required</p>
+            )}
             <div className="flex justify-end mt-4">
               <button
                 type="submit"
