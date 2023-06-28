@@ -1,5 +1,5 @@
 import { AiOutlineCloseCircle, AiFillEdit } from "react-icons/ai";
-
+import { Link } from "react-router-dom";
 export const Tasks = ({ task, deleteTask }) => {
   
   return (
@@ -8,7 +8,9 @@ export const Tasks = ({ task, deleteTask }) => {
         <div className="relative">
           <div className="absolute top-0 right-0">
             <button className="text-black m-1">
-              <AiFillEdit />
+              <Link to={`/tasks/${task._id}`}>
+                <AiFillEdit />
+              </Link>
             </button>
             <button onClick={() => deleteTask(task._id)} className="text-red-700 m-1">
               <AiOutlineCloseCircle />
