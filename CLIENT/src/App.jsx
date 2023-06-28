@@ -10,10 +10,13 @@ import {
   TaskPage
 
 } from "./view";
+import { Navbar } from "./components";
 
 
 function App() {
   return (
+    <>
+    <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />
@@ -26,6 +29,7 @@ function App() {
       </Route>
       <Route path="*" element={<Error404 />} />
     </Routes>
+    </>
   );
 }
 

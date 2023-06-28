@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTasks } from "../../Hooks/useTasks";
-import { Tasks } from "../../components";
+import { Navbar, Tasks } from "../../components";
 
 export const TaskPage = () => {
   const { getTasks, tasks, deleteTask } = useTasks();
