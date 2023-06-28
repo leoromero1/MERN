@@ -24,10 +24,10 @@ export const RegisterPage = () => {
                 <Link className="ml-4 text-blue-700" to="/login">Login</Link>
               </p>
             </div>
-            <div className="order-first hidden w-full lg:block">
+            <div className="order-first hidden w-full h-full lg:block">
               <img
                 className="object-cover h-full bg-cover rounded-l-lg"
-                src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+                src="https://smoda.elpais.com/wp-content/uploads/2023/02/trabajo-1-620x470.jpg"
                 alt=""
               />
             </div>
